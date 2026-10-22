@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "art_direction_brief": "assets/art-direction-brief.md",
+  "version": "1.1",
+  "assets": [
+    {
+      "id": "rally-gt",
+      "role": "player and opponent GT vehicle",
+      "path": "assets/3d/gt/rally-gt.glb",
+      "status": "verified",
+      "bytes": 6086152,
+      "sha256": "ce87684831f257170feb0ba0f7565ecb6e7ffe76e746cca08a93a82af76b675b",
+      "technical": {
+        "triangles": 69981,
+        "meshes": 33,
+        "materials": 23,
+        "maximum_texture_size": 1024,
+        "length_scene_units": 4.4,
+        "collision": "existing arcade proxy",
+        "wheel_pivots": 4,
+        "format": "self-contained glTF 2.0 binary"
+      },
+      "visual_locks": [
+        "industrial sports-car racing",
+        "readable driver paint",
+        "realistic surface response",
+        "same gameplay footprint"
+      ],
+      "source": {
+        "kind": "adapted licensed model",
+        "url_or_tool": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CarConcept",
+        "creator": "Eric Chadwick; Darmstadt Graphics Group GmbH",
+        "created_at": "2026-10-22",
+        "license": "CC-BY-4.0",
+        "attribution": "In-game credits, THIRD_PARTY.md and adjacent PROVENANCE.md",
+        "edits": "Simplification, pruning, mesh joining, image resizing, logo-surface removal; runtime paint, tint, normalization and wheel animation."
+      },
+      "verification": {
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "technical_checks_passed": true,
+        "approved_by": "Codex browser and technical review; visual asset choice delegated by user"
+      }
+    },
+    {
+      "id": "asphalt-diff",
+      "role": "asphalt diff surface map",
+      "path": "assets/pbr/asphalt-diff.jpg",
+      "status": "verified",
+      "bytes": 635143,
+      "sha256": "28bfd71288b364f825e0feb750e487410422d80bf3c31d32da01cae3bf085b58",
+      "technical": {
+        "dimensions": "1024x1024",
+        "color_space": "sRGB",
+        "mipmaps": true,
+        "anisotropy": "up to 8",
+        "normal_orientation": null
+      },
+      "visual_locks": [
+        "industrial sports-car racing",
+        "readable driver paint",
+        "realistic surface response",
+        "same gameplay footprint"
+      ],
+      "source": {
+        "kind": "licensed photographed material",
+        "url_or_tool": "https://polyhaven.com/a/aerial_asphalt_01",
+        "creator": "Rob Tuytel",
+        "created_at": "2026-10-22",
+        "license": "CC0-1.0",
+        "attribution": "In-game credits, THIRD_PARTY.md and adjacent PROVENANCE.md",
+        "edits": "Filename only; source pixels unmodified. UV scale and material tint configured at runtime."
+      },
+      "verification": {
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "technical_checks_passed": true,
+        "approved_by": "Codex browser and technical review; visual asset choice delegated by user"
+      }
+    },
+    {
+      "id": "asphalt-normal",
+      "role": "asphalt normal surface map",
+      "path": "assets/pbr/asphalt-normal.jpg",
+      "status": "verified",
+      "bytes": 560227,
+      "sha256": "7a58cb4460f75b66359b8e19bc92585554a79c2b0009e2b9e21eccac0a58d3f6",
+      "technical": {
+        "dimensions": "1024x1024",
+        "color_space": "linear data",
+        "mipmaps": true,
+        "anisotropy": "up to 8",
+        "normal_orientation": "OpenGL"
+      },
+      "visual_locks": [
+        "industrial sports-car racing",
+        "readable driver paint",
+        "realistic surface response",
+        "same gameplay footprint"
+      ],
+      "source": {
+        "kind": "licensed photographed material",
+        "url_or_tool": "https://polyhaven.com/a/aerial_asphalt_01",
+        "creator": "Rob Tuytel",
+        "created_at": "2026-10-22",
+        "license": "CC0-1.0",
+        "attribution": "In-game credits, THIRD_PARTY.md and adjacent PROVENANCE.md",
+        "edits": "Filename only; source pixels unmodified. UV scale and material tint configured at runtime."
+      },
+      "verification": {
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "technical_checks_passed": true,
+        "approved_by": "Codex browser and technical review; visual asset choice delegated by user"
+      }
+    },
+    {
+      "id": "asphalt-rough",
+      "role": "asphalt rough surface map",
+      "path": "assets/pbr/asphalt-rough.jpg",
+      "status": "verified",
+      "bytes": 312445,
+      "sha256": "19ca745417e36a1cd1114411801933b3144a351d1409d0d9caa1046b9a20c0ec",
+      "technical": {
+        "dimensions": "1024x1024",
+        "color_space": "linear data",
+        "mipmaps": true,
+        "anisotropy": "up to 8",
+        "normal_orientation": null
+      },
+      "visual_locks": [
+        "industrial sports-car racing",
+        "readable driver paint",
+        "realistic surface response",
+        "same gameplay footprint"
+      ],
+      "source": {
+        "kind": "licensed photographed material",
+        "url_or_tool": "https://polyhaven.com/a/aerial_asphalt_01",
+        "creator": "Rob Tuytel",
+        "created_at": "2026-10-22",
+        "license": "CC0-1.0",
+        "attribution": "In-game credits, THIRD_PARTY.md and adjacent PROVENANCE.md",
+        "edits": "Filename only; source pixels unmodified. UV scale and material tint configured at runtime."
+      },
+      "verification": {
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "technical_checks_passed": true,
+        "approved_by": "Codex browser and technical review; visual asset choice delegated by user"
+      }
+    },
+    {
+      "id": "concrete-diff",
+      "role": "concrete diff surface map",
+      "path": "assets/pbr/concrete-diff.jpg",
+      "status": "verified",
+      "bytes": 769415,
+      "sha256": "fea247dd085cd05d8deb335234c834764d622029da351f8bcc8913935316bacd",
+      "technical": {
+        "dimensions": "1024x1024",
+        "color_space": "sRGB",
+        "mipmaps": true,
+        "anisotropy": "up to 8",
+        "normal_orientation": null
+      },
+      "visual_locks": [
+        "industrial sports-car racing",
+        "readable driver paint",
+        "realistic surface response",
+        "same gameplay footprint"
+      ],
+      "source": {
+        "kind": "licensed photographed material",
+        "url_or_tool": "https://polyhaven.com/a/concrete_wall_006",
+        "creator": "Charlotte Baglioni; Dario Barresi",
+        "created_at": "2026-10-22",
+        "license": "CC0-1.0",
+        "attribution": "In-game credits, THIRD_PARTY.md and adjacent PROVENANCE.md",
+        "edits": "Filename only; source pixels unmodified. UV scale and material tint configured at runtime."
+      },
+      "verification": {
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "technical_checks_passed": true,
+        "approved_by": "Codex browser and technical review; visual asset choice delegated by user"
+      }
+    },
+    {
+      "id": "concrete-normal",
+      "role": "concrete normal surface map",
+      "path": "assets/pbr/concrete-normal.jpg",
+      "status": "verified",
+      "bytes": 1195078,
+      "sha256": "4ff16bb96fc2df3ef71d22007151aff1d8bf7cb10a493d3f8e973213a99dd428",
+      "technical": {
+        "dimensions": "1024x1024",
+        "color_space": "linear data",
+        "mipmaps": true,
+        "anisotropy": "up to 8",
+        "normal_orientation": "OpenGL"
+      },
+      "visual_locks": [
+        "industrial sports-car racing",
+        "readable driver paint",
+        "realistic surface response",
+        "same gameplay footprint"
+      ],
+      "source": {
+        "kind": "licensed photographed material",
+        "url_or_tool": "https://polyhaven.com/a/concrete_wall_006",
+        "creator": "Charlotte Baglioni; Dario Barresi",
+        "created_at": "2026-10-22",
+        "license": "CC0-1.0",
+        "attribution": "In-game credits, THIRD_PARTY.md and adjacent PROVENANCE.md",
+        "edits": "Filename only; source pixels unmodified. UV scale and material tint configured at runtime."
+      },
+      "verification": {
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "technical_checks_passed": true,
+        "approved_by": "Codex browser and technical review; visual asset choice delegated by user"
+      }
+    },
+    {
+      "id": "concrete-rough",
+      "role": "concrete rough surface map",
+      "path": "assets/pbr/concrete-rough.jpg",
+      "status": "verified",
+      "bytes": 255004,
+      "sha256": "ceee98c940b8f1e49169af880497aa60eaae5de0ac5b3603aa753b76f687c455",
+      "technical": {
+        "dimensions": "1024x1024",
+        "color_space": "linear data",
+        "mipmaps": true,
+        "anisotropy": "up to 8",
+        "normal_orientation": null
+      },
+      "visual_locks": [
+        "industrial sports-car racing",
+        "readable driver paint",
+        "realistic surface response",
+        "same gameplay footprint"
+      ],
+      "source": {
+        "kind": "licensed photographed material",
+        "url_or_tool": "https://polyhaven.com/a/concrete_wall_006",
+        "creator": "Charlotte Baglioni; Dario Barresi",
+        "created_at": "2026-10-22",
+        "license": "CC0-1.0",
+        "attribution": "In-game credits, THIRD_PARTY.md and adjacent PROVENANCE.md",
+        "edits": "Filename only; source pixels unmodified. UV scale and material tint configured at runtime."
+      },
+      "verification": {
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "technical_checks_passed": true,
+        "approved_by": "Codex browser and technical review; visual asset choice delegated by user"
+      }
+    },
+    {
+      "id": "industrial-sunset",
+      "role": "reflections and background lighting",
+      "path": "assets/pbr/industrial-sunset.hdr",
+      "status": "verified",
+      "bytes": 1610744,
+      "sha256": "43ad8b5ae5de42a6d0123ed063ba6867488c2f90adf24efdf051781952b5e9cb",
+      "technical": {
+        "dimensions": "1024x512",
+        "format": "Radiance HDR",
+        "mapping": "equirectangular"
+      },
+      "visual_locks": [
+        "industrial sports-car racing",
+        "readable driver paint",
+        "realistic surface response",
+        "same gameplay footprint"
+      ],
+      "source": {
+        "kind": "licensed photographed material",
+        "url_or_tool": "https://polyhaven.com/a/industrial_sunset_02",
+        "creator": "Sergej Majboroda",
+        "created_at": "2026-10-22",
+        "license": "CC0-1.0",
+        "attribution": "In-game credits, THIRD_PARTY.md and adjacent PROVENANCE.md",
+        "edits": "Filename only; runtime reflection prefilter and background blur."
+      },
+      "verification": {
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "technical_checks_passed": true,
+        "approved_by": "Codex browser and technical review; visual asset choice delegated by user"
+      }
+    }
+  ]
+}

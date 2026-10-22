@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ef4c23">
+  <meta name="description" content="Balapan bareng di satu layar. HP jadi controller. Gratis, tanpa batas waktu sesi.">
+  <title>Couch Rally | HP jadi controller</title>
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./vendor/peerjs.min.js"></script>
+  <script defer src="./vendor/qrcode.js"></script>
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+  <script type="module" src="./src/main.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <button class="wordmark" id="home-button" aria-label="Couch Rally, kembali ke beranda">COUCH<span>RALLY</span><i aria-hidden="true">//</i></button>
+    <div class="top-note">SATU LAYAR. SATU TONGKRONGAN.</div>
+    <button class="text-button" id="help-button">Cara main</button>
+  </header>
+
+  <main id="home-view">
+    <section class="home-grid">
+      <div class="intro">
+        <p class="edition">3D SPLIT-SCREEN RACING / VOL. 01</p>
+        <h1>SOFA JADI<br><em>GARIS START.</em></h1>
+        <p class="intro-copy">Ajak teman. Buka di laptop atau TV.<br>HP kalian jadi setirnya.</p>
+        <button class="primary large" id="host-button">BUAT ROOM <span aria-hidden="true">↗</span></button>
+        <button class="text-button solo" id="solo-button">Langsung coba pakai keyboard</button>
+        <div class="promise"><span>GRATIS.</span> Tanpa akun, tanpa timer sesi.</div>
+      </div>
+      <div class="showcase">
+        <div class="showcase-head"><span>COUCH RALLY CIRCUIT</span><span>01 / 03</span></div>
+        <div id="home-stage"></div>
+        <div class="showcase-foot"><strong>GAS BARENG.</strong><span>4 pemain · 8 mobil · 3 lintasan</span></div>
+      </div>
+    </section>
+    <section class="join-strip" aria-labelledby="join-title">
+      <div><p class="edition">SUDAH ADA LAYAR?</p><h2 id="join-title">HP kamu, controller kamu.</h2></div>
+      <form id="join-form" class="join-form">
+        <label class="sr-only" for="room-input">Kode room enam karakter</label>
+        <input id="room-input" maxlength="6" placeholder="KODE ROOM" autocomplete="off" autocapitalize="characters" spellcheck="false" required pattern="[A-Za-z2-9]{6}" title="Masukkan 6 huruf atau angka dari layar">
+        <button class="dark" type="submit">GABUNG</button>
+      </form>
+    </section>
+  </main>
+
+  <main id="host-view" hidden>
+    <div class="host-heading"><div><p class="edition">PIT LANE</p><h1 id="host-title">Siapa yang paling kencang?</h1></div><button class="text-button" id="fullscreen-button">Layar penuh</button></div>
+    <div class="host-grid">
+      <section class="race-panel">
+        <div class="race-toolbar"><strong id="track-label">Couch Circuit</strong><div id="race-clock">PILIH LINTASAN. SIAPKAN HP.</div></div>
+        <div id="host-stage"></div>
+        <div class="race-bottom"><span id="race-hint">Belok ← → · rem ↓ · boost Spasi · reset R</span><button class="text-button" id="pause-button" hidden>Jeda</button></div>
+      </section>
+      <aside class="pit-panel">
+        <section id="room-panel"><div class="room-head"><span class="edition">KODE ROOM</span><button class="text-button" id="copy-button">Salin link</button></div><div id="room-code" class="room-code">······</div><div class="qr-row"><div id="qr"></div><p>Scan pakai kamera HP,<br>atau buka website ini<br>dan masukkan kode.</p></div><p class="connection" id="host-status" role="status">Menyiapkan room...</p></section>
+        <section id="setup-panel">
+          <label for="track-select">Lintasan</label><select id="track-select"></select>
+          <div class="option-row"><div><label for="laps-select">Putaran</label><select id="laps-select"><option value="3">3 lap</option><option value="5">5 lap</option><option value="0">Free ride ∞</option></select></div><div><label for="bots-select">Lawan AI</label><select id="bots-select"><option value="3">3 bot</option><option value="0">Tanpa bot</option><option value="1">1 bot</option><option value="5">5 bot</option><option value="7">7 bot</option></select></div></div>
+        </section>
+        <section class="drivers"><div class="room-head"><h2>Di grid start</h2><span id="player-count">0 / 4</span></div><ul id="players-list"></ul><div id="no-players">Belum ada pembalap. Scan QR di atas atau tambahkan keyboard.</div><button id="keyboard-button" class="secondary">+ Pembalap keyboard</button></section>
+        <button id="start-button" class="primary start" disabled>MULAI BALAPAN</button>
+        <button id="lobby-button" class="secondary" hidden>Kembali ke pit lane</button>
+        <p class="smallprint">Main terus, sesukanya. Free ride tidak punya garis finis.</p>
+      </aside>
+    </div>
+  </main>
+
+  <main id="controller-view" hidden>
+    <form id="driver-form" class="driver-form">
+      <p class="edition">ROOM <span id="controller-room"></span></p><h1>Ambil posisi.</h1><p>Nama kamu muncul di layar utama.</p>
+      <label for="driver-name">Nama pembalap</label><input id="driver-name" maxlength="16" placeholder="Nama kamu" autocomplete="nickname" required>
+      <button class="primary" type="submit">SAMBUNGKAN HP</button><p id="join-status" role="status"></p>
+    </form>
+    <section id="gamepad" hidden>
+      <div class="pad-top"><div><p class="edition" id="pad-room"></p><h1 id="pad-name">Pembalap</h1></div><button class="text-button" id="disconnect-button">Keluar</button></div>
+      <p id="pad-status" role="status">Menunggu host mulai balapan...</p>
+      <div class="telemetry"><span><b id="pad-position">P1</b>POSISI</span><span><b id="pad-speed">0</b>KM/J</span><span><b id="pad-lap">1/3</b>LAP</span></div>
+      <div class="pad-controls"><div class="steering"><button class="pad-button steer" data-control="left" aria-label="Belok kiri">◀</button><button class="pad-button steer" data-control="right" aria-label="Belok kanan">▶</button></div><div class="pedals"><button class="pad-button brake" data-control="brake">REM</button><button class="pad-button boost" data-control="boost">BOOST<span class="boost-track"><span id="boost-fill"></span></span></button></div></div>
+      <div class="pad-bottom"><label class="check-label"><input type="checkbox" id="auto-gas" checked> Gas otomatis</label><button class="text-button" id="reset-button">Kembali ke lintasan</button></div>
+      <button class="pad-button gas" data-control="gas" id="gas-button" hidden>TAHAN UNTUK GAS</button>
+      <p class="pad-tip">Dua jempol, satu ambisi. Pegang HP mendatar untuk kontrol lebih lebar.</p>
+    </section>
+  </main>
+
+  <div id="stage" class="stage"><canvas id="race-canvas" width="1600" height="1000" aria-label="Game balap 3D dengan kamera di belakang mobil"></canvas><div id="viewport-huds" hidden></div><div id="race-overlay" class="race-overlay" hidden></div><div id="leaderboard" class="leaderboard" hidden></div><div id="asset-status" class="asset-status" role="status">Memuat aset 3D...</div></div>
+  <footer id="footer"><span>BUILT FOR GAME NIGHT.</span><button class="text-button" id="credits-button">Aset & kredit</button><span>NO SUBSCRIPTION. JUST COMPETITION.</span></footer>
+  <dialog id="help-dialog"><button class="dialog-close" data-close aria-label="Tutup">×</button><p class="edition">DARI SOFA KE SIRKUIT</p><h2>Cara main</h2><ol><li>Di laptop atau TV, pilih <b>Buat room</b>.</li><li>Scan QR dengan HP masing-masing. Isi nama, lalu sambungkan.</li><li>Host pilih lintasan dan tekan <b>Mulai balapan</b>.</li><li>Gas otomatis. Belok pakai tombol kiri/kanan, rem di tikungan, tahan boost di jalan lurus.</li></ol><p>Keyboard: panah untuk P1, A/D dan S untuk P2. Boost: Spasi / Shift. R mengembalikan mobil ke checkpoint. Tambahkan maksimal dua pembalap keyboard.</p><p><b>Internet dibutuhkan untuk pairing antarperangkat.</b> Wi-Fi rumah yang sama disarankan. Jaringan kantor atau operator tertentu bisa memblokir WebRTC; coba Wi-Fi lain. Biarkan layar host dan HP tetap aktif.</p><p>Balapan selesai berdasarkan lap. Tidak ada batas waktu sesi. Pilih Free ride untuk berkendara terus.</p></dialog>
+<dialog id="credits-dialog"><button class="dialog-close" data-close aria-label="Tutup">×</button><p class="edition">THANKS, PIT CREW.</p><h2>Aset & kredit</h2><p>Mobil: <a href="https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CarConcept" target="_blank" rel="noreferrer">Car Concept</a> oleh Eric Chadwick, © 2024 Darmstadt Graphics Group GmbH, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>. Diadaptasi: mesh dioptimasi, tekstur diperkecil, logo diganti/hapus, cat dan kaca disesuaikan untuk balapan.</p><p>Tekstur & HDRI: <a href="https://polyhaven.com/" target="_blank" rel="noreferrer">Poly Haven</a> (CC0). Aerial Asphalt 01: Rob Tuytel. Concrete Wall 006: Charlotte Baglioni & Dario Barresi. Industrial Sunset 02: Sergej Majboroda.</p><p>Rendering: <a href="https://threejs.org/" target="_blank" rel="noreferrer">Three.js</a> (MIT). Koneksi: <a href="https://peerjs.com/" target="_blank" rel="noreferrer">PeerJS</a> (MIT). QR: <a href="https://github.com/kazuhikoarase/qrcode-generator" target="_blank" rel="noreferrer">QR Code Generator</a> (MIT).</p><p>Couch Rally adalah game orisinal yang terinspirasi konsep HP sebagai controller. Tidak terafiliasi dengan AirConsole atau pembuat aset.</p></dialog>
+  <div id="toast" role="status" hidden></div>
+  <noscript>Aktifkan JavaScript untuk bermain Couch Rally.</noscript>
+</body>
+</html>
