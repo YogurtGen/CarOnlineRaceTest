@@ -2,6 +2,8 @@
 
 Game balapan 3D orisinal untuk main bareng di satu layar. Setiap HP menjadi controller melalui browser. Kamera mengikuti mobil dari belakang, dengan split-screen untuk 2–4 pemain. Maksimal 8 mobil termasuk AI.
 
+**[Main di GitHub Pages](https://yogurtgen.github.io/CarOnlineRaceTest/)** · [Repository](https://github.com/YogurtGen/CarOnlineRaceTest)
+
 Versi **1.1** memakai model GT yang lebih detail, cat metallic/clearcoat, interior dan roda beranimasi, tekstur aspal/beton dari foto, refleksi HDRI, serta lingkungan industri dengan pembatas, garasi, ventilasi dan pipa. Semua aset disertakan lokal dan tetap kompatibel dengan GitHub Pages tanpa build.
 
 Tidak ada akun, langganan, iklan, atau timer sesi di kode aplikasi. Balapan biasa berakhir berdasarkan jumlah lap. Pilih **Free ride** untuk berkendara tanpa batas lap. Main ulang sesuka kamu.

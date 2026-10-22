@@ -78,8 +78,18 @@ These checks used two browser sessions on one physical computer. They do not ver
 
 ## Practical limits
 
-The game has no application play-time limit. Free hosting/signaling retains its providers' own availability and quotas. Strict networks can require a TURN relay that is not bundled. Scene props are decorative; physics is an arcade simulation on a flat plane. v1.1 has a larger first download for the detailed model and PBR assets. There are no combat weapons in this version. The selected deployment target is `YogurtGen/CarOnlineRaceTest`; publication is pending Git push and Pages setup. Physical phone/TV and low-end GPU testing remain unperformed.
+The game has no application play-time limit. Free hosting/signaling retains its providers' own availability and quotas. Strict networks can require a TURN relay that is not bundled. Scene props are decorative; physics is an arcade simulation on a flat plane. v1.1 has a larger first download for the detailed model and PBR assets. There are no combat weapons in this version. The game is deployed to `YogurtGen/CarOnlineRaceTest` through GitHub Pages from `main` and `/(root)`. Physical phone/TV and low-end GPU testing remain unperformed.
 
 ## Playwright CLI verification — 22 October 2026
 
 An additional run with `playwright-cli` and an isolated Microsoft Edge session passed 13 checks against `http://127.0.0.1:4173/couch-rally/`: responsive home at four widths, room/QR creation, a browser phone controller joining two keyboard players, portrait controller layout, three 3D viewports with live speed telemetry, pause, return to lobby, disconnect removal, no JavaScript exceptions, and no failed local asset responses. This was a local browser test; it does not establish that the public GitHub Pages deployment is live.
+
+### Public deployment verification
+
+- Repository: https://github.com/YogurtGen/CarOnlineRaceTest
+- Live game: https://yogurtgen.github.io/CarOnlineRaceTest/
+- GitHub Pages reported `built` for application commit `b2432df8627bdb0cbb07dedc7a5a1c61c0d35507`.
+- The live home page was opened and read through Opera Browser Connector.
+- A public `playwright-cli` run passed **14 checks**: responsive home at 360/390/768/1440px, room/QR, controller pairing through real PeerJS/WebRTC, portrait controller layout, upgraded GT model ready, three viewports with live speed after checkpoint reset, pause, return to lobby, disconnect removal, no JavaScript exceptions, and no failed game-asset responses.
+- The controller used a separate mobile browser context with BroadcastChannel disabled. Both contexts ran on one physical computer; this does not represent a physical phone test or arbitrary NAT/firewall coverage.
+- The first public movement assertion timed out after auto-gas drove off the track during initial loading. The successful run waited for the model before starting and reset to the checkpoint before checking speed. No application source change was needed.
